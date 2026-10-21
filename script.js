@@ -43,6 +43,28 @@ function changeSize(){
         })
 }
 
+function changeCase(){
+    document.getElementById("caseButton").addEventListener(
+        "click", function(){
+            let head = document.getElementById("changeHead");
+            let para = document.getElementById("changeP");
+            let makeUpper = head.innerHTML !== head.innerHTML.toUpperCase();
+            head.innerHTML = makeUpper ? head.innerHTML.toUpperCase() : head.innerHTML.toLowerCase();
+            para.innerHTML = makeUpper ? para.innerHTML.toUpperCase() : para.innerHTML.toLowerCase();
+            this.textContent = makeUpper ? "Lower Case" : "Upper Case";
+        })
+}
+
+function toggleTheme(){
+    document.getElementById("themeButton").addEventListener(
+        "click", function(){
+            document.body.classList.toggle("dark-mode");
+            this.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+        })
+}
+
 changeColor();
 changeFont();
 changeSize();
+changeCase();
+toggleTheme();
